@@ -3,6 +3,7 @@
 #include "CarNode.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 void initCarList(CarList *carList) {
   carList->first = carList->last = NULL;
@@ -67,4 +68,25 @@ void printCarListIfMatchSeats(const CarList *const carList, unsigned seats) {
       printCar(&it->car);
     }
   }
+}
+
+void sortCarListByYear(CarList *carList) {
+  if (!carList->first || !carList->first->next) {
+    return;
+  }
+  bool swapped;
+  CarNode *curr, *prev;
+  do {
+    swapped = false;
+    prev = carList->first;
+    curr = prev->next;
+    while (curr) {
+      if (prev->car.year > curr->car.year) {
+	swapNodesData(prev, curr);
+	swapped = true;
+      }
+      prev = curr;
+      curr = curr->next;
+    }
+  } while(swapped);
 }

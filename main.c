@@ -10,7 +10,8 @@ void printMenu() {
   puts("2.Delete");
   puts("3.Print all");
   puts("4.Print by seats");
-  puts("5.Exit");
+  puts("5.Sort by year");
+  puts("6.Exit");
   printf(">> ");
 }
 
@@ -58,6 +59,10 @@ int main(void) {
       }
       break;
     case 5:
+      sortCarListByYear(&carList);
+      printCarList(&carList);
+      break;
+    case 6:
       freeCarList(&carList);
       exit(EXIT_SUCCESS);
     default:
