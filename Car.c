@@ -25,11 +25,11 @@ bool readCar(Car *car) {
   printf("color: ");
   getchar();
   ok &= (fgets(car->color, MAX_COL, stdin) != NULL);  
-  printf("model: ");
-  ok &= (fgets(car->model, MAX_MODEL, stdin) != NULL);
+  printf("mark: ");
+  ok &= (fgets(car->mark, MAX_MARK, stdin) != NULL);
 
   car->color[strlen(car->color) - 1] = 0;
-  car->model[strlen(car->model) - 1] = 0;
+  car->mark[strlen(car->mark) - 1] = 0;
   
   return ok;
 }
@@ -41,6 +41,6 @@ void printCar(const Car *const car) {
   printf("power: %u, ", car->power);
   printf("year: %u, ", car->year);
   printf("color: %s, ", car->color);
-  printf("model: %s", car->model);
+  printf("mark: %s", car->mark);
   printf(" }\n");
 }
