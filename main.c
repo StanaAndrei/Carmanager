@@ -19,12 +19,14 @@ int main(void) {
   CarList carList;
   initCarList(&carList);
 
-  Car c1 = {(unsigned)1, (unsigned char)5, (unsigned)300, (unsigned)2000, "blue", "bmw"};
-  Car c2 = {(unsigned)2, (unsigned char)4, (unsigned)300, (unsigned)2010, "black", "dacia"};
-  Car c3 = {(unsigned)3, (unsigned char)1, (unsigned)300, (unsigned)2006, "yellow", "renault"};
-  addToStartOfCarList(&carList, newCarNode(&c3));
-  addToStartOfCarList(&carList, newCarNode(&c2));
-  addToStartOfCarList(&carList, newCarNode(&c1));
+  {//push cars for test
+    Car c1 = {(unsigned)1, (unsigned char)5, (unsigned)300, (unsigned)2000, "blue", "bmw"};
+    Car c2 = {(unsigned)2, (unsigned char)4, (unsigned)300, (unsigned)2010, "black", "dacia"};
+    Car c3 = {(unsigned)3, (unsigned char)1, (unsigned)300, (unsigned)2006, "yellow", "renault"};
+    addToStartOfCarList(&carList, newCarNode(&c3));
+    addToStartOfCarList(&carList, newCarNode(&c2));
+    addToStartOfCarList(&carList, newCarNode(&c1));
+  }
 
   
   for (EVER) {
